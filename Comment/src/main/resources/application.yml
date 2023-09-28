@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: COMMENT-SERVICE
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: commentdb
+server:
+  port: 8082

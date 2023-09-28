@@ -23,10 +23,19 @@ public class PostController {
         return new ResponseEntity<>(savePost, HttpStatus.CREATED);
     }
 
+
+    // http://localhost:8081/api/post/{postId}
     @GetMapping("/{postId}")
     public Post getPostById(@PathVariable String postId){
-        postService.getPostById(postId);
+        Post postById = postService.getPostById(postId);
+        return postById;
     }
 
+    // http://localhost:8081/api/post/{postId}/comments
+    @GetMapping("/{postId}/comments")
+    public ResponseEntity<PostDto> getPostWithComments(@PathVariable String postId){
+       PostDto postDto = postService.getPostWithComments(postId);
+       return new ResponseEntity<>(postDto,HttpStatus.OK);
+    }
 
 }
