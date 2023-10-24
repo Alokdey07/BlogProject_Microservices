@@ -16,17 +16,19 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-
+    // Endpoint to save a new comment
     // http://localhost:8082:api/comments
     @PostMapping
     public ResponseEntity<Comment> saveComment(@RequestBody Comment comment){
-
+        // Call the service to save the comment
         Comment comment1 = commentService.saveComment(comment);
             return new ResponseEntity<>(comment1, HttpStatus.OK);
     }
 
+    // Endpoint to get all comments by postId
     @GetMapping("{postId}")
     public ResponseEntity<List<Comment>> getAllCommentsByPostId(@PathVariable String postId){
+        // Call the service to retrieve all comments for the specified postId
         List<Comment> comments=commentService.getAllTheCommentByPostId(postId);
         return new ResponseEntity<>(comments,HttpStatus.OK);
 

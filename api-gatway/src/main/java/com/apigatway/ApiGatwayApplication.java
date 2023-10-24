@@ -1,4 +1,4 @@
-package com.microservice.comment;
+package com.apigatway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class CommentApplication {
+public class ApiGatwayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CommentApplication.class, args);
+		SpringApplication.run(ApiGatwayApplication.class, args);
 	}
 
 }
